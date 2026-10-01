@@ -92,7 +92,7 @@ export const about = {
 }
 
 export const contact = {
-  title: 'Aberto a oportunidades e novos projetos.',
+  title: 'Aberto a oportunidades de Trabalhos PJ, CLT e também a novos projetos.',
   lead: 'Se quiser falar sobre uma vaga, um projeto ou uma colaboração, ficarei feliz em conversar.',
   ctaLabel: 'Conversar pelo WhatsApp',
 }

@@ -8,18 +8,17 @@ export default function Services() {
           <div className="services__eyebrow">
             <span className="services__eyebrow-index">01</span>
             <span>services.js</span>
-            <span className="services__eyebrow-role">Desenvolvedor de software</span>
           </div>
+          <p className="services__role">Desenvolvedor de software</p>
           <h2 className="services__title">
             {services.titleBefore}<em>{services.titleEm}</em>
           </h2>
           <p className="services__intro">{services.intro}</p>
-          <p className="services__outro">
-            {services.outro}{' '}
-            <a className="services__link" href={whatsappUrl} target="_blank" rel="noreferrer">
-              {services.ctaLabel} <span aria-hidden="true">↘</span>
-            </a>
-          </p>
+          <p className="services__outro">{services.outro}</p>
+          <a className="services__contact" href={whatsappUrl} target="_blank" rel="noreferrer">
+            <span>{services.ctaLabel}</span>
+            <span className="services__contact-arrow" aria-hidden="true">↗</span>
+          </a>
         </div>
 
         <div className="services__editor" aria-label="Áreas de desenvolvimento">

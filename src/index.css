@@ -241,9 +241,8 @@ html.has-reveal .reveal.is-visible {
 .services__eyebrow {
   display: flex;
   align-items: center;
-  flex-wrap: wrap;
   gap: 11px;
-  margin-bottom: 22px;
+  margin-bottom: 16px;
   color: #52627a;
   font: 12px/1.4 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
 }
@@ -252,8 +251,11 @@ html.has-reveal .reveal.is-visible {
   color: var(--blue);
 }
 
-.services__eyebrow-role {
+.services__role {
+  margin: 0 0 12px;
   color: var(--navy);
+  font-size: 14px;
+  font-weight: 600;
 }
 
 .services__title {
@@ -283,15 +285,43 @@ html.has-reveal .reveal.is-visible {
   margin-top: 22px;
 }
 
-.services__link {
+.services__contact {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 18px;
+  padding: 0;
   color: var(--navy);
+  background: transparent;
+  font-size: 15px;
   font-weight: 600;
-  text-decoration: underline;
-  text-underline-offset: 4px;
+  text-decoration: none;
+  transition: color 0.25s var(--ease);
 }
 
-.services__link:hover {
+.services__contact:hover {
   color: var(--blue);
+}
+
+.services__contact-arrow {
+  display: grid;
+  width: 30px;
+  height: 30px;
+  place-items: center;
+  color: var(--bg);
+  background: var(--navy);
+  border-radius: 50%;
+  transition: transform 0.25s var(--ease), background 0.25s var(--ease);
+}
+
+.services__contact:hover .services__contact-arrow {
+  transform: translate(2px, -2px);
+  background: var(--blue);
+}
+
+.services__contact:focus-visible {
+  outline: 2px solid var(--navy);
+  outline-offset: 4px;
 }
 
 .services__editor {
