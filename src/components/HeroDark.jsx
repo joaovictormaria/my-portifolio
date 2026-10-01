@@ -8,8 +8,28 @@ export default function HeroDark() {
     <section className="herod">
       <div className="container herod__inner">
         <div className="herod__brand">
-          <span className="herod__name">{site.name}</span>
-          <span className="herod__role">{site.role}</span>
+          <span className="herod__filename">developer.js</span>
+          <code className="herod__code" aria-label={`${site.name}, ${site.role}`}>
+            <span className="herod__code-line">
+              <span className="herod__syntax">const</span> developer = {'{'}
+            </span>
+            <span className="herod__code-line">
+              {'  '}name: <span className="herod__string">"{site.name}"</span>,
+            </span>
+            <span className="herod__code-line">
+              {'  '}role: <span className="herod__string">"{site.role}"</span>,
+            </span>
+            <span className="herod__code-line">
+              {'  '}skills: <span className="herod__bracket">[</span>
+              <span className="herod__string">"frontend"</span>,{' '}
+              <span className="herod__string">"backend"</span>
+              <span className="herod__bracket">]</span>,
+            </span>
+            <span className="herod__code-line">
+              {'  '}start: <span className="herod__function">() =&gt; true</span>
+            </span>
+            <span className="herod__code-line">{'}'}</span>
+          </code>
         </div>
 
         <div className="herod__stage">
