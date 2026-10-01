@@ -286,21 +286,10 @@ html.has-reveal .reveal.is-visible {
 }
 
 .services__contact {
-  display: inline-flex;
-  align-items: center;
   gap: 14px;
   margin-top: 18px;
-  padding: 0;
-  color: var(--navy);
-  background: transparent;
-  font-size: 15px;
-  font-weight: 600;
-  text-decoration: none;
-  transition: color 0.25s var(--ease);
-}
-
-.services__contact:hover {
-  color: var(--blue);
+  padding: 10px 12px 10px 20px;
+  border: 0;
 }
 
 .services__contact-arrow {
@@ -308,15 +297,15 @@ html.has-reveal .reveal.is-visible {
   width: 30px;
   height: 30px;
   place-items: center;
-  color: var(--bg);
-  background: var(--navy);
+  color: var(--navy);
+  background: var(--sky);
   border-radius: 50%;
   transition: transform 0.25s var(--ease), background 0.25s var(--ease);
 }
 
 .services__contact:hover .services__contact-arrow {
   transform: translate(2px, -2px);
-  background: var(--blue);
+  background: var(--sky-mid);
 }
 
 .services__contact:focus-visible {
@@ -1588,6 +1577,7 @@ html.has-reveal .reveal.is-visible {
 .herod::before {
   content: "";
   position: absolute;
+  z-index: 0;
   left: 18%;
   top: 40%;
   width: 46vw;
@@ -1597,8 +1587,19 @@ html.has-reveal .reveal.is-visible {
   pointer-events: none;
 }
 
+.herod__network {
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  opacity: 0.72;
+}
+
 .herod__inner {
   position: relative;
+  z-index: 2;
   min-height: 0;
   width: 100%;
   display: grid;
@@ -1719,11 +1720,13 @@ html.has-reveal .reveal.is-visible {
 
 .herod__social {
   position: absolute;
+  z-index: 3;
   left: 50%;
   bottom: 40px;
   display: flex;
   justify-content: center;
-  gap: 18px;
+  gap: 24px;
+  width: max-content;
   transform: translateX(-50%);
 }
 
@@ -1777,9 +1780,7 @@ html.has-reveal .reveal.is-visible {
   }
 
   .herod__social {
-    position: static;
-    margin-top: 32px;
-    transform: none;
+    bottom: 28px;
   }
 }
 

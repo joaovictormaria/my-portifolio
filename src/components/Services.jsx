@@ -15,7 +15,7 @@ export default function Services() {
           </h2>
           <p className="services__intro">{services.intro}</p>
           <p className="services__outro">{services.outro}</p>
-          <a className="services__contact" href={whatsappUrl} target="_blank" rel="noreferrer">
+          <a className="btn services__contact" href={whatsappUrl} target="_blank" rel="noreferrer">
             <span>{services.ctaLabel}</span>
             <span className="services__contact-arrow" aria-hidden="true">↗</span>
           </a>
