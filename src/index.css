@@ -1629,6 +1629,10 @@ html.has-reveal .reveal.is-visible {
   color: var(--sky-mid);
 }
 
+.herod__menu-toggle {
+  display: none;
+}
+
 /* ---------- Foto recortada sobre o círculo ---------- */
 
 .herod__stage {
@@ -1764,23 +1768,103 @@ html.has-reveal .reveal.is-visible {
     min-height: 0;
   }
 
+  .herod__brand {
+    top: 32px;
+    left: 50%;
+    transform: translateX(-50%);
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    max-width: calc(100% - 112px);
+    white-space: nowrap;
+    text-align: center;
+  }
+
+  .herod__name {
+    font-size: 15px;
+  }
+
+  .herod__role {
+    font-size: 12px;
+  }
+
+  .herod__menu-toggle {
+    position: fixed;
+    z-index: 1000;
+    top: 16px;
+    right: 18px;
+    display: grid;
+    width: 44px;
+    height: 44px;
+    place-items: center;
+    color: #ecf0f7;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(215, 222, 234, 0.2);
+    border-radius: 50%;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.28);
+    backdrop-filter: blur(10px);
+  }
+
   .herod__art {
     max-width: min(74vw, 340px);
   }
 
   .herod__vnav {
-    position: absolute;
-    top: 76px;
-    right: auto;
-    left: var(--gutter);
-    transform: none;
+    position: fixed;
+    z-index: 999;
+    top: 70px;
+    right: 18px;
+    left: auto;
+    width: min(280px, calc(100vw - 36px));
+    flex-direction: column;
+    gap: 0;
+    padding: 8px 14px;
+    background: rgba(17, 23, 34, 0.97);
+    border: 1px solid rgba(215, 222, 234, 0.16);
+    border-radius: 6px;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateY(-8px);
+    transform-origin: top center;
     writing-mode: horizontal-tb;
-    gap: 20px;
-    font-size: 11px;
+    font-size: 12px;
+    transition: opacity 0.25s var(--ease), transform 0.25s var(--ease),
+      visibility 0.25s;
+  }
+
+  .herod__vnav.is-open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+
+  .herod__vnav a {
+    padding: 12px 2px;
+    border-bottom: 1px solid rgba(215, 222, 234, 0.1);
+  }
+
+  .herod__vnav a:last-child {
+    border-bottom: 0;
+  }
+
+  .herod__copy .btn {
+    display: flex;
+    width: fit-content;
+    margin-inline: auto;
   }
 
   .herod__social {
     bottom: 28px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .herod__vnav {
+    transition: none;
   }
 }
 

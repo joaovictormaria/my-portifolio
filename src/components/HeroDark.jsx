@@ -1,6 +1,7 @@
+import { useState } from 'react'
 import TypedTitle from './TypedTitle'
 import HeroNetwork from './HeroNetwork'
-import { FaLinkedin } from 'react-icons/fa6'
+import { FaBars, FaLinkedin, FaXmark } from 'react-icons/fa6'
 import { SiGithub, SiInstagram, SiWhatsapp } from 'react-icons/si'
 import { hero, site, navLinks, socialLinks, mailto, whatsappUrl } from '../data/content'
 
@@ -12,6 +13,7 @@ const socialIcons = {
 }
 
 export default function HeroDark() {
+  const [menuOpen, setMenuOpen] = useState(false)
   const socials = socialLinks.filter((l) => l.href)
 
   return (
@@ -42,7 +44,26 @@ export default function HeroDark() {
           </a>
         </div>
 
-        <nav className="herod__vnav">
+        <button
+          className="herod__menu-toggle"
+          type="button"
+          aria-label={menuOpen ? 'Fechar menu' : 'Abrir menu'}
+          aria-expanded={menuOpen}
+          aria-controls="hero-navigation"
+          onClick={() => setMenuOpen((open) => !open)}
+        >
+          {menuOpen ? <FaXmark aria-hidden="true" /> : <FaBars aria-hidden="true" />}
+        </button>
+
+        <nav
+          className={`herod__vnav${menuOpen ? ' is-open' : ''}`}
+          id="hero-navigation"
+          aria-label="Navegação principal"
+          onClick={() => setMenuOpen(false)}
+          onKeyDown={(event) => {
+            if (event.key === 'Escape') setMenuOpen(false)
+          }}
+        >
           {navLinks.map((l) => (
             <a href={l.href} key={l.label}>
               {l.label}
