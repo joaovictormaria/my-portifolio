@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { faq } from '../data/content'
+import { faq, whatsappUrl } from '../data/content'
 
 export default function Faq() {
   const [open, setOpen] = useState(-1)
@@ -33,7 +33,7 @@ export default function Faq() {
           })}
         </div>
         <p className="faq__note">
-          Ficou alguma dúvida? <a href="#contato">Entre em contato</a>
+          Ficou alguma dúvida? <a href={whatsappUrl} target="_blank" rel="noreferrer">Entre em contato</a>
         </p>
       </div>
     </section>

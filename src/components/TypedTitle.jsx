@@ -7,7 +7,7 @@ import { useEffect, useRef, useState } from 'react'
  * ao fatiamento. Um "fantasma" invisível com o texto completo segura a altura
  * da caixa, senão a página saltaria a cada letra ao mudar de linha.
  */
-export default function TypedTitle({ segments, speed = 38, startDelay = 350, className }) {
+export default function TypedTitle({ segments, speed = 38, startDelay = 350, className, as: Heading = 'h1' }) {
   const full = segments.map((s) => s.text).join('')
   // Começa completo: sem JS, ou antes do efeito rodar, o título aparece inteiro.
   const [count, setCount] = useState(full.length)
@@ -50,7 +50,7 @@ export default function TypedTitle({ segments, speed = 38, startDelay = 350, cla
   })
 
   return (
-    <h1 className={className} aria-label={full}>
+    <Heading className={className} aria-label={full}>
       <span className="type__ghost" aria-hidden="true">
         {segments.map((s, i) => (s.bold ? <strong key={i}>{s.text}</strong> : <span key={i}>{s.text}</span>))}
       </span>
@@ -58,6 +58,6 @@ export default function TypedTitle({ segments, speed = 38, startDelay = 350, cla
         {typed}
         <span className={`type__caret${done ? ' type__caret--done' : ''}`} />
       </span>
-    </h1>
+    </Heading>
   )
 }

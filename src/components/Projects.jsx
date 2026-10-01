@@ -29,7 +29,10 @@ export default function Projects() {
                 <div className="project__foot">
                   <span className="project__num">{String(i + 1).padStart(2, '0')}</span>
                   <div className="project__meta">
-                    <span className="project__tag">{p.tag}</span>
+                    <div className="project__labels">
+                      <span className="project__tag">{p.tag}</span>
+                      {p.status && <span className="project__status">{p.status}</span>}
+                    </div>
                     <h3 className="project__title">{p.title}</h3>
                     <p className="project__desc">{p.desc}</p>
                   </div>

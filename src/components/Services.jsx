@@ -1,4 +1,4 @@
-import { services } from '../data/content'
+import { services, whatsappUrl } from '../data/content'
 
 export default function Services() {
   return (
@@ -8,6 +8,7 @@ export default function Services() {
           <div className="services__eyebrow">
             <span className="services__eyebrow-index">01</span>
             <span>services.js</span>
+            <span className="services__eyebrow-role">Desenvolvedor de software</span>
           </div>
           <h2 className="services__title">
             {services.titleBefore}<em>{services.titleEm}</em>
@@ -15,7 +16,7 @@ export default function Services() {
           <p className="services__intro">{services.intro}</p>
           <p className="services__outro">
             {services.outro}{' '}
-            <a className="services__link" href="#contato">
+            <a className="services__link" href={whatsappUrl} target="_blank" rel="noreferrer">
               {services.ctaLabel} <span aria-hidden="true">↘</span>
             </a>
           </p>

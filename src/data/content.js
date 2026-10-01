@@ -3,14 +3,17 @@
 export const site = {
   name: 'João Victor Rodrigues',
   role: 'Desenvolvedor Full Stack',
-  tagline: 'Desenvolvedor full stack, com foco em aplicações web.',
+  tagline: 'Desenvolvedor FullStack.',
   copyright: '© 2026 João Victor Rodrigues Nascimento',
-  location: 'Brasil',
+  location: 'Aracaju · Sergipe · Brasil',
   // Campos de contato: preencher quando houver dado real. Vazio não é renderizado.
   email: '',
-  linkedinUrl: '',
-  githubUrl: '',
+  linkedinUrl: 'https://www.linkedin.com/in/joão-victor-rodrigues-nascimento-8b9aa11b1/?isSelfProfile=true',
+  instagramUrl: 'https://www.instagram.com/victor.rodrigues.j/',
+  githubUrl: 'https://github.com/joaovictormaria',
 }
+
+export const whatsappUrl = 'https://wa.me/5579998206085'
 
 export const features = {
   showProjects: true,
@@ -34,7 +37,7 @@ export const hero = {
 
 export const stack = {
   label: 'Trabalho com',
-  // As 13 tecnologias informadas. A lista e duplicada na renderizacao para o loop.
+  // A lista e duplicada na renderizacao para o loop continuo.
   items: [
     'JavaScript',
     'TypeScript',
@@ -46,6 +49,7 @@ export const stack = {
     'PostgreSQL',
     'Python',
     'C#',
+    'C',
     'Docker',
     'Git',
     'GitHub',
@@ -55,7 +59,7 @@ export const stack = {
 export const services = {
   titleBefore: 'Aplicações web precisam ser rápidas, acessíveis e fáceis de manter — ',
   titleEm: 'do componente na tela à API que responde por ele.',
-  intro: 'Atuo no desenvolvimento de aplicações web, do frontend ao backend:',
+  intro: 'Como desenvolvedor de software, atuo no desenvolvimento de aplicações web, do frontend ao backend:',
   items: [
     {
       label: 'Frontend',
@@ -73,23 +77,24 @@ export const about = {
     'Do primeiro componente ao deploy: atenção à arquitetura, ao código e à manutenção da aplicação.',
   tab: 'Mais sobre mim',
   paragraphs: [
-    'Sou desenvolvedor full stack, com foco em aplicações web. No frontend trabalho com JavaScript, TypeScript, React e Next.js; no backend, com APIs REST e PostgreSQL.',
-    'Também tenho conhecimento em Python e C#, e uso Docker, Git e GitHub no dia a dia de desenvolvimento.',
-    'Atuei como desenvolvedor frontend na Pawkeepr, em junho de 2025, integrando uma equipe pequena de desenvolvimento.',
-    'Minha formação é em Análise e Desenvolvimento de Sistemas, na Estácio, com pós-graduação em Ciência de Dados e Inteligência Artificial e em Engenharia de Redes e Segurança de Dados, na Faculdade Líbano.',
+    'Desenvolvedor FullStack.',
+    'Trabalho com JavaScript, TypeScript, React, Next.js, APIs REST e PostgreSQL. Também trabalho com C e C#.',
+    'Tenho conhecimento em Python e uso Docker, Git e GitHub no dia a dia de desenvolvimento.',
+    'Fui estagiário de desenvolvimento frontend na Pawkeepr de junho de 2025 a junho de 2026, integrando uma equipe pequena de desenvolvimento.',
+    'Sou formado em Análise e Desenvolvimento de Sistemas pela Estácio e atualmente curso pós-graduação em Ciência de Dados e Inteligência Artificial e em Engenharia de Redes e Segurança de Dados, ambas na Faculdade Líbano.',
     'Tenho interesse em arquitetura e desenvolvimento de aplicações, e mantenho um processo contínuo de estudo e aprimoramento técnico.',
   ],
-  photo: '/festa.jpeg',
+  photo: '/capa.webp',
   photoAlt: 'João Victor Rodrigues em um evento da VELNOX.IA',
-  photoZoom: 1.2, // aproximacao leve
-  photoFocusY: 50, // 50 = centraliza o recorte na vertical
+  photoZoom: 1,
+  photoFocusY: 40,
   photoPlaceholder: 'Foto',
 }
 
 export const contact = {
   title: 'Aberto a oportunidades e novos projetos.',
   lead: 'Se quiser falar sobre uma vaga, um projeto ou uma colaboração, ficarei feliz em conversar.',
-  ctaLabel: 'Enviar um e-mail',
+  ctaLabel: 'Conversar pelo WhatsApp',
 }
 
 export const faq = {
@@ -97,15 +102,15 @@ export const faq = {
   items: [
     {
       q: 'Quais tecnologias você utiliza?',
-      a: 'No frontend, JavaScript, TypeScript, React, Next.js, HTML e CSS. No backend, APIs REST e PostgreSQL. Também tenho conhecimento em Python e C#, e uso Docker, Git e GitHub no fluxo de desenvolvimento.',
+      a: 'No frontend, JavaScript, TypeScript, React, Next.js, HTML e CSS. No backend, APIs REST e PostgreSQL. Também trabalho com C, Python e C#, e uso Docker, Git e GitHub no fluxo de desenvolvimento.',
     },
     {
       q: 'Qual é a sua formação?',
-      a: 'Análise e Desenvolvimento de Sistemas na Estácio, com pós-graduação em Ciência de Dados e Inteligência Artificial e em Engenharia de Redes e Segurança de Dados, na Faculdade Líbano.',
+      a: 'Sou formado em Análise e Desenvolvimento de Sistemas pela Estácio e atualmente curso pós-graduação em Ciência de Dados e Inteligência Artificial e em Engenharia de Redes e Segurança de Dados, ambas na Faculdade Líbano.',
     },
     {
       q: 'Qual é a sua experiência profissional?',
-      a: 'Atuei como desenvolvedor frontend na Pawkeepr, em junho de 2025, integrando uma equipe pequena de desenvolvimento.',
+      a: 'Fui estagiário de desenvolvimento frontend na Pawkeepr de junho de 2025 a junho de 2026, integrando uma equipe pequena de desenvolvimento.',
     },
     {
       q: 'Você trabalha com frontend ou backend?',
@@ -139,11 +144,13 @@ export const navLinks = [
 
 export const socialLinks = [
   { label: 'LinkedIn', href: site.linkedinUrl, external: true },
+  { label: 'Instagram', href: site.instagramUrl, external: true },
   { label: 'GitHub', href: site.githubUrl, external: true },
+  { label: 'WhatsApp', href: whatsappUrl, external: true },
 ]
 
 export const aboutLinks = [
-  { label: 'Entrar em contato', href: '#contato' },
+  { label: 'Entrar em contato', href: whatsappUrl, external: true },
   { label: 'Enviar e-mail', href: mailto },
   ...socialLinks,
 ]
@@ -181,6 +188,7 @@ export const projects = [
   {
     tag: 'SaaS',
     title: 'VELDOCS',
+    status: 'Em desenvolvimento',
     image: '/card-veldocs.jpg',
     desc: 'SaaS B2B modular para gestão de documentos empresariais: vencimentos, responsáveis, pendências, contratos e processos.',
     url: '',
@@ -193,8 +201,9 @@ export const projects = [
     url: 'https://conformia-tau.vercel.app',
   },
   {
-    tag: 'API',
-    title: 'Conform.IA — Backend',
+    tag: 'Plataforma de compliance',
+    title: 'Conform.IA',
+    status: 'Em desenvolvimento',
     image: '/card-conformia.jpg',
     desc: 'API em Python com FastAPI, SQLAlchemy e PostgreSQL, documentada em Swagger, testada com Pytest e containerizada com Docker.',
     url: 'https://www.conformia.com.br',

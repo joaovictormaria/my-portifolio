@@ -12,8 +12,8 @@ export default function Footer() {
           </div>
           <p className="footer__tagline">{site.tagline}</p>
         </div>
-        <div>
-          <div className="footer__heading">Links</div>
+        <nav className="footer__nav" aria-label="Navegação do rodapé">
+          <h2 className="footer__heading">Explorar</h2>
           <div className="footer__links">
             {links.map((l) => (
               <a
@@ -26,7 +26,7 @@ export default function Footer() {
               </a>
             ))}
           </div>
-        </div>
+        </nav>
       </div>
       <div className="footer__bar">
         <span>{site.copyright}</span>

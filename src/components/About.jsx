@@ -1,29 +1,46 @@
 import ImageSlot from './ImageSlot'
-import { about, aboutLinks } from '../data/content'
+import TypedTitle from './TypedTitle'
+import { about, aboutLinks, site } from '../data/content'
 
 export default function About() {
   const links = aboutLinks.filter((l) => l.href)
 
   return (
     <section id="sobre" className="about reveal">
-      <h2 className="about__title">{about.title}</h2>
-      <div className="about__tabwrap">
-        <span className="about__tab">{about.tab}</span>
-      </div>
+      <header className="about__head">
+        <p className="about__eyebrow">
+          <span className="about__eyebrow-index">01</span>
+          {about.tab}
+        </p>
+        <TypedTitle
+          as="h2"
+          className="about__title"
+          segments={[{ text: about.title }]}
+        />
+      </header>
       <div className="about__grid">
-        <div className="about__photo">
-          <ImageSlot
-            src={about.photo}
-            alt={about.photoAlt}
-            zoom={about.photoZoom}
-            focusY={about.photoFocusY}
-            placeholder={about.photoPlaceholder}
-          />
-        </div>
+        <figure className="about__portrait">
+          <div className="about__photo">
+            <ImageSlot
+              src={about.photo}
+              alt={about.photoAlt}
+              zoom={about.photoZoom}
+              focusY={about.photoFocusY}
+              placeholder={about.photoPlaceholder}
+            />
+          </div>
+          <figcaption className="about__caption">
+            <span className="about__caption-name">{site.name}</span>
+            <span className="about__caption-meta">{site.location}</span>
+          </figcaption>
+        </figure>
         <div className="about__text">
-          {about.paragraphs.map((text) => (
-            <p key={text}>{text}</p>
-          ))}
+          <p className="about__lead">{about.paragraphs[0]}</p>
+          <div className="about__story">
+            {about.paragraphs.slice(1).map((text) => (
+              <p key={text}>{text}</p>
+            ))}
+          </div>
           {links.length > 0 && (
             <div className="about__links">
               {links.map((l) => (

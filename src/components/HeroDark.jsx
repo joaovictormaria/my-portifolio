@@ -1,5 +1,14 @@
 import TypedTitle from './TypedTitle'
-import { hero, site, navLinks, socialLinks, mailto } from '../data/content'
+import { FaLinkedin } from 'react-icons/fa6'
+import { SiGithub, SiInstagram, SiWhatsapp } from 'react-icons/si'
+import { hero, site, navLinks, socialLinks, mailto, whatsappUrl } from '../data/content'
+
+const socialIcons = {
+  LinkedIn: FaLinkedin,
+  Instagram: SiInstagram,
+  GitHub: SiGithub,
+  WhatsApp: SiWhatsapp,
+}
 
 export default function HeroDark() {
   const socials = socialLinks.filter((l) => l.href)
@@ -8,28 +17,8 @@ export default function HeroDark() {
     <section className="herod">
       <div className="container herod__inner">
         <div className="herod__brand">
-          <span className="herod__filename">developer.js</span>
-          <code className="herod__code" aria-label={`${site.name}, ${site.role}`}>
-            <span className="herod__code-line">
-              <span className="herod__syntax">const</span> developer = {'{'}
-            </span>
-            <span className="herod__code-line">
-              {'  '}name: <span className="herod__string">"{site.name}"</span>,
-            </span>
-            <span className="herod__code-line">
-              {'  '}role: <span className="herod__string">"{site.role}"</span>,
-            </span>
-            <span className="herod__code-line">
-              {'  '}skills: <span className="herod__bracket">[</span>
-              <span className="herod__string">"frontend"</span>,{' '}
-              <span className="herod__string">"backend"</span>
-              <span className="herod__bracket">]</span>,
-            </span>
-            <span className="herod__code-line">
-              {'  '}start: <span className="herod__function">() =&gt; true</span>
-            </span>
-            <span className="herod__code-line">{'}'}</span>
-          </code>
+          <span className="herod__name">{site.name}</span>
+          <span className="herod__role">{site.role}</span>
         </div>
 
         <div className="herod__stage">
@@ -46,7 +35,7 @@ export default function HeroDark() {
             ]}
           />
           <p className="herod__lead">{hero.lead}</p>
-          <a className="btn btn--light" href="#contato">
+          <a className="btn btn--light" href={whatsappUrl} target="_blank" rel="noreferrer">
             {hero.ctaLabel}
           </a>
         </div>
@@ -62,11 +51,22 @@ export default function HeroDark() {
         {(socials.length > 0 || mailto) && (
           <div className="herod__social">
             {mailto && <a href={mailto}>E-mail</a>}
-            {socials.map((l) => (
-              <a href={l.href} key={l.label} target="_blank" rel="noreferrer">
-                {l.label}
-              </a>
-            ))}
+            {socials.map((l) => {
+              const Icon = socialIcons[l.label]
+              return (
+                <a
+                  className="herod__social-link"
+                  href={l.href}
+                  key={l.label}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label={l.label}
+                  title={l.label}
+                >
+                  {Icon && <Icon aria-hidden="true" focusable="false" />}
+                </a>
+              )
+            })}
           </div>
         )}
       </div>
