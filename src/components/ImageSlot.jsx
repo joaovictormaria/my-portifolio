@@ -1,3 +1,7 @@
+import { useState } from 'react'
+
+const round = (n) => Math.round(n * 1000) / 1000
+
 /**
  * ImageSlot — substitui o web component <image-slot> do arquivo original.
  *
@@ -33,16 +37,37 @@ export default function ImageSlot({
   placeholder = 'Imagem',
   shape = 'rect',
   fit = 'cover',
+  zoom = 1,
+  focusY = 0,
 }) {
+  // Se o arquivo não existir, volta ao placeholder em vez de imagem quebrada.
+  const [failed, setFailed] = useState(false)
+
+  // Zoom por dimensionamento, não por transform: evita o borrão do compositor.
+  const zoomStyle =
+    zoom === 1
+      ? undefined
+      : {
+          width: `${round(zoom * 100)}%`,
+          height: `${round(zoom * 100)}%`,
+          left: `${round((1 - zoom) * 50)}%`,
+          top: `${round((1 - zoom) * focusY)}%`,
+        }
+
   return (
     <div className={`slot slot--${shape}`}>
       <div className="slot__frame">
-        {src ? (
+        {src && !failed ? (
           <img
-            className={`slot__img${fit === 'contain' ? ' slot__img--contain' : ''}`}
+            className={`slot__img${fit === 'contain' ? ' slot__img--contain' : ''}${
+              zoom === 1 ? '' : ' slot__img--zoom'
+            }`}
             src={src}
             alt={alt}
             draggable="false"
+            decoding="async"
+            onError={() => setFailed(true)}
+            style={zoomStyle}
           />
         ) : (
           <>

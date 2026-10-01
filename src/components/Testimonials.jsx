@@ -8,14 +8,17 @@ export default function Testimonials() {
   const paused = useRef(false)
 
   useEffect(() => {
+    if (!testimonials.length) return
     const timer = setInterval(() => {
       if (!paused.current) setActive((t) => (t + 1) % testimonials.length)
     }, 5000)
     return () => clearInterval(timer)
   }, [])
 
+  if (!testimonials.length) return null
+
   return (
-    <section className="testimonials">
+    <section className="testimonials reveal">
       <div
         className="testimonials__stack"
         onMouseEnter={() => {

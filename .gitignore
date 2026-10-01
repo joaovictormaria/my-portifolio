@@ -13,3 +13,6 @@ yarn-error.log*
 
 .vercel
 .env*
+
+# Arquivos-fonte de marca (PDFs, logos originais). Nao fazem parte do site.
+brand-assets/

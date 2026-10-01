@@ -1,8 +1,10 @@
-import { site } from '../data/content'
+import { site, footerLinks } from '../data/content'
 
 export default function Footer() {
+  const links = footerLinks.filter((l) => l.href)
+
   return (
-    <footer className="footer">
+    <footer className="footer reveal">
       <div className="footer__grid">
         <div className="footer__brand">
           <div className="footer__name">
@@ -13,29 +15,23 @@ export default function Footer() {
         <div>
           <div className="footer__heading">Links</div>
           <div className="footer__links">
-            <a className="nav-link" href="#">
-              Início
-            </a>
-            <a className="nav-link" href="#projetos">
-              Projetos
-            </a>
-            <a className="nav-link" href={`mailto:${site.email}`}>
-              E-mail
-            </a>
-            <a className="nav-link" href={site.linkedinUrl} target="_blank" rel="noreferrer">
-              LinkedIn
-            </a>
-            <a className="nav-link" href={site.githubUrl} target="_blank" rel="noreferrer">
-              GitHub
-            </a>
+            {links.map((l) => (
+              <a
+                className="nav-link"
+                href={l.href}
+                key={l.label}
+                {...(l.external ? { target: '_blank', rel: 'noreferrer' } : {})}
+              >
+                {l.label}
+              </a>
+            ))}
           </div>
         </div>
       </div>
       <div className="footer__bar">
         <span>{site.copyright}</span>
         <span className="footer__meta">
-          <span>Privacidade</span>
-          <span>Brasil</span>
+          <span>{site.location}</span>
         </span>
       </div>
     </footer>

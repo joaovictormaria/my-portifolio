@@ -35,10 +35,9 @@ src/
     Header.jsx
     Hero.jsx
     Services.jsx
-    Projects.jsx
-    Testimonials.jsx    # carrossel automático (5s), pausa no hover
+    Projects.jsx        # desativado em `features` (sem projetos publicados)
+    Testimonials.jsx    # desativado em `features`; carrossel de 5s, pausa no hover
     About.jsx
-    Velnox.jsx
     Faq.jsx             # acordeão
     Contact.jsx
     Footer.jsx
@@ -48,12 +47,17 @@ legacy/Portfolio.html   # arquivo original, apenas para referência
 
 ## Editando o conteúdo
 
-Quase tudo que você vai querer trocar está em
-[src/data/content.js](src/data/content.js): nome, e-mail, links de redes,
-projetos, depoimentos e perguntas frequentes.
+Todo o conteúdo está em [src/data/content.js](src/data/content.js): nome,
+contato, textos de cada seção e perguntas frequentes.
 
-As seções de depoimentos e de FAQ podem ser ligadas ou desligadas em
-`features` no mesmo arquivo (eram props do componente original).
+Os campos `email`, `linkedinUrl` e `githubUrl` em `site` estão vazios de
+propósito — os links e botões correspondentes só aparecem depois que forem
+preenchidos.
+
+As seções de projetos, depoimentos e FAQ são ligadas ou desligadas em
+`features`. Projetos e depoimentos estão desativados por não haver conteúdo
+real; para ativá-los, preencha os arrays `projects` / `testimonials` e mude a
+flag.
 
 ### Colocando imagens
 

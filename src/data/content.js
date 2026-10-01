@@ -1,108 +1,122 @@
 // Todo o conteúdo editável do site fica aqui.
-// Para trocar textos, projetos, depoimentos ou perguntas, edite este arquivo.
 
 export const site = {
-  name: 'Seu Nome',
-  role: 'Web · Mobile · Software',
-  email: 'contato@seunome.dev',
-  tagline: 'Desenvolvedor web, mobile e de software.',
-  scheduleUrl: '#',
-  linkedinUrl: '#',
-  githubUrl: '#',
-  copyright: '© 2026 Seu Nome – Feito com café e TypeScript',
+  name: 'João Victor Rodrigues',
+  role: 'Desenvolvedor Full Stack',
+  tagline: 'Desenvolvedor full stack, com foco em aplicações web.',
+  copyright: '© 2026 João Victor Rodrigues Nascimento',
+  location: 'Brasil',
+  // Campos de contato: preencher quando houver dado real. Vazio não é renderizado.
+  email: '',
+  linkedinUrl: '',
+  githubUrl: '',
 }
 
-// Liga/desliga seções inteiras (eram props do componente original).
 export const features = {
-  showTestimonial: true,
+  showProjects: true,
+  showTestimonial: false,
   showFaq: true,
 }
 
-export const projects = [
-  {
-    tag: 'Web',
-    title: 'Plataforma de E-commerce',
-    desc: 'Loja virtual com checkout próprio, painel administrativo e integração com meios de pagamento.',
-  },
-  {
-    tag: 'Mobile',
-    title: 'App de Agendamentos',
-    desc: 'Aplicativo iOS e Android para clínicas, com lembretes por notificação e pagamento no app.',
-  },
-  {
-    tag: 'Software',
-    title: 'Sistema de Gestão Interna',
-    desc: 'ERP sob medida que substituiu planilhas e automatizou o controle de estoque e pedidos.',
-  },
-  {
-    tag: 'Web',
-    title: 'Dashboard de Métricas',
-    desc: 'Painel em tempo real que reúne dados de vendas e marketing em uma única tela.',
-  },
-  {
-    tag: 'Mobile',
-    title: 'App de Delivery',
-    desc: 'Rastreamento de pedidos ao vivo para clientes, entregadores e restaurantes.',
-  },
-  {
-    tag: 'Software',
-    title: 'API de Integrações',
-    desc: 'Serviço que conecta sistemas legados a plataformas modernas com segurança e escala.',
-  },
-].map((p, i) => ({
-  ...p,
-  // Preencha `image` com a URL de uma imagem ou `video` com a URL de um vídeo.
-  image: p.image || '',
-  video: p.video || '',
-  slotId: `projeto-${i + 1}`,
-  placeholder: `Imagem ou vídeo – ${p.title}`,
-}))
+export const hero = {
+  titleBefore: 'Desenvolvimento ',
+  titleStrong: 'full stack',
+  titleAfter: ', do frontend à API.',
+  lead: 'Trabalho com aplicações web usando React, Next.js e TypeScript no frontend, e APIs REST com PostgreSQL no backend. Tenho interesse em arquitetura de aplicações e em escrever código claro e fácil de manter.',
+  ctaLabel: 'Entrar em contato',
+  photo: '/foto-perfil.jpg', // arquivo em public/
+  art: '/hero-art.png', // circulo + foto recortada no arco, usado no hero escuro
+  photoAlt: 'João Victor Rodrigues',
+  photoZoom: 1.4, // aumente para aproximar mais
+  photoFocusY: 0, // 0 = ancora no topo, 50 = centraliza, 100 = base
+  photoPlaceholder: 'Foto (retrato)',
+}
 
-export const testimonials = [
-  {
-    quote:
-      'Entregou um aplicativo complexo no prazo, com código limpo e uma comunicação impecável durante todo o projeto.',
-    author: 'Nome do Cliente – Empresa',
-  },
-  {
-    quote:
-      'Nosso site ficou muito mais rápido e as vendas online cresceram logo no primeiro mês.',
-    author: 'Nome do Cliente – Empresa',
-  },
-  {
-    quote:
-      'Transformou nossas planilhas em um sistema simples que toda a equipe usa todos os dias.',
-    author: 'Nome do Cliente – Empresa',
-  },
-  {
-    quote:
-      'Profissional atento aos detalhes, sempre propondo soluções antes mesmo de surgirem os problemas.',
-    author: 'Nome do Cliente – Empresa',
-  },
-].map((t, i) => ({ ...t, avatar: t.avatar || '', slotId: `depo-avatar-${i + 1}` }))
+export const stack = {
+  label: 'Trabalho com',
+  // As 13 tecnologias informadas. A lista e duplicada na renderizacao para o loop.
+  items: [
+    'JavaScript',
+    'TypeScript',
+    'React',
+    'Next.js',
+    'HTML',
+    'CSS',
+    'APIs REST',
+    'PostgreSQL',
+    'Python',
+    'C#',
+    'Docker',
+    'Git',
+    'GitHub',
+  ],
+}
 
-export const faqs = [
-  {
-    q: 'Quais tecnologias você usa?',
-    a: 'Trabalho principalmente com React, Next.js, React Native, Node.js e TypeScript, mas escolho a stack de acordo com a necessidade de cada projeto.',
-  },
-  {
-    q: 'Quanto tempo leva para desenvolver um projeto?',
-    a: 'Depende do escopo. Um site leva algumas semanas; um aplicativo completo pode levar alguns meses. Após a primeira conversa envio um cronograma detalhado.',
-  },
-  {
-    q: 'Você desenvolve para iOS e Android?',
-    a: 'Sim. Uso desenvolvimento multiplataforma para entregar nos dois sistemas com uma única base de código, reduzindo custo e prazo.',
-  },
-  {
-    q: 'Você faz manutenção depois da entrega?',
-    a: 'Sim, ofereço planos de suporte e evolução contínua para manter o produto atualizado e seguro.',
-  },
-  {
-    q: 'Quem cuida do design?',
-    a: 'Posso trabalhar a partir do design da sua equipe ou indicar parceiros de UI/UX para criar a interface do zero.',
-  },
-]
+export const services = {
+  titleBefore: 'Aplicações web precisam ser rápidas, acessíveis e fáceis de manter — ',
+  titleEm: 'do componente na tela à API que responde por ele.',
+  intro: 'Atuo no desenvolvimento de aplicações web, do frontend ao backend:',
+  items: [
+    {
+      label: 'Frontend',
+      text: 'interfaces com React, Next.js, TypeScript, JavaScript, HTML e CSS.',
+    },
+    { label: 'Backend e APIs', text: 'APIs REST e persistência de dados com PostgreSQL.' },
+    { label: 'Ferramentas', text: 'Docker, Git e GitHub no fluxo de desenvolvimento.' },
+  ],
+  outro: 'Quer conversar sobre uma oportunidade ou projeto? ',
+  ctaLabel: 'Entrar em contato',
+}
+
+export const about = {
+  title:
+    'Do primeiro componente ao deploy: atenção à arquitetura, ao código e à manutenção da aplicação.',
+  tab: 'Mais sobre mim',
+  paragraphs: [
+    'Sou desenvolvedor full stack, com foco em aplicações web. No frontend trabalho com JavaScript, TypeScript, React e Next.js; no backend, com APIs REST e PostgreSQL.',
+    'Também tenho conhecimento em Python e C#, e uso Docker, Git e GitHub no dia a dia de desenvolvimento.',
+    'Atuei como desenvolvedor frontend na Pawkeepr, em junho de 2025, integrando uma equipe pequena de desenvolvimento.',
+    'Minha formação é em Análise e Desenvolvimento de Sistemas, na Estácio, com pós-graduação em Ciência de Dados e Inteligência Artificial e em Engenharia de Redes e Segurança de Dados, na Faculdade Líbano.',
+    'Tenho interesse em arquitetura e desenvolvimento de aplicações, e mantenho um processo contínuo de estudo e aprimoramento técnico.',
+  ],
+  photo: '/festa.jpeg',
+  photoAlt: 'João Victor Rodrigues em um evento da VELNOX.IA',
+  photoZoom: 1.2, // aproximacao leve
+  photoFocusY: 50, // 50 = centraliza o recorte na vertical
+  photoPlaceholder: 'Foto',
+}
+
+export const contact = {
+  title: 'Aberto a oportunidades e novos projetos.',
+  lead: 'Se quiser falar sobre uma vaga, um projeto ou uma colaboração, ficarei feliz em conversar.',
+  ctaLabel: 'Enviar um e-mail',
+}
+
+export const faq = {
+  title: 'Perguntas frequentes',
+  items: [
+    {
+      q: 'Quais tecnologias você utiliza?',
+      a: 'No frontend, JavaScript, TypeScript, React, Next.js, HTML e CSS. No backend, APIs REST e PostgreSQL. Também tenho conhecimento em Python e C#, e uso Docker, Git e GitHub no fluxo de desenvolvimento.',
+    },
+    {
+      q: 'Qual é a sua formação?',
+      a: 'Análise e Desenvolvimento de Sistemas na Estácio, com pós-graduação em Ciência de Dados e Inteligência Artificial e em Engenharia de Redes e Segurança de Dados, na Faculdade Líbano.',
+    },
+    {
+      q: 'Qual é a sua experiência profissional?',
+      a: 'Atuei como desenvolvedor frontend na Pawkeepr, em junho de 2025, integrando uma equipe pequena de desenvolvimento.',
+    },
+    {
+      q: 'Você trabalha com frontend ou backend?',
+      a: 'Atuo como desenvolvedor full stack. Minha experiência profissional foi em frontend, e também desenvolvo backend, com APIs REST e banco de dados.',
+    },
+    {
+      q: 'Como você se mantém atualizado?',
+      a: 'Com estudo contínuo de desenvolvimento e arquitetura de aplicações, acompanhando a evolução das tecnologias que utilizo.',
+    },
+  ],
+}
 
 export const velnox = {
   eyebrow: 'Fundador',
@@ -112,3 +126,92 @@ export const velnox = {
   url: 'https://www.velnoxia.com.br',
   cta: 'Conhecer a VELNOX.IA ↗',
 }
+
+export const mailto = site.email ? `mailto:${site.email}` : ''
+
+// Links de navegação e sociais; os de URL vazia são filtrados na renderização.
+export const navLinks = [
+  { label: 'Sobre', href: '#sobre' },
+  ...(features.showProjects ? [{ label: 'Projetos', href: '#projetos' }] : []),
+  { label: 'VELNOX.IA', href: '#velnox' },
+  { label: 'Contato', href: '#contato' },
+]
+
+export const socialLinks = [
+  { label: 'LinkedIn', href: site.linkedinUrl, external: true },
+  { label: 'GitHub', href: site.githubUrl, external: true },
+]
+
+export const aboutLinks = [
+  { label: 'Entrar em contato', href: '#contato' },
+  { label: 'Enviar e-mail', href: mailto },
+  ...socialLinks,
+]
+
+export const footerLinks = [
+  { label: 'Início', href: '#' },
+  ...navLinks,
+  { label: 'E-mail', href: mailto },
+  ...socialLinks,
+]
+
+// Descrições derivadas dos READMEs e do package.json de cada repositório.
+export const projects = [
+  {
+    tag: 'Web',
+    title: 'VELNOX.IA',
+    image: '/card-velnoxia.jpg',
+    desc: 'Landing page da VELNOX.IA em React e Vite, com formulário de orçamento que abre o WhatsApp com a mensagem pronta.',
+    url: 'https://www.velnoxia.com.br',
+  },
+  {
+    tag: 'Full Stack',
+    title: 'VELNOX App',
+    image: '/card-velnox-app.jpg',
+    desc: 'Painel administrativo e PDV para pizzaria em modelo white label, com Prisma na camada de dados e pagamentos via Stripe.',
+    url: 'https://velnox.app.br/',
+  },
+  {
+    tag: 'Web',
+    title: 'VELNOX White Label',
+    image: '/card-white-label.jpg',
+    desc: 'Versão white label do site da VELNOX.IA, construída em React, TypeScript e Tailwind sobre Vite.',
+    url: 'https://velnoxlabel.velnoxia.com.br',
+  },
+  {
+    tag: 'SaaS',
+    title: 'VELDOCS',
+    image: '/card-veldocs.jpg',
+    desc: 'SaaS B2B modular para gestão de documentos empresariais: vencimentos, responsáveis, pendências, contratos e processos.',
+    url: '',
+  },
+  {
+    tag: 'Web',
+    title: 'Conform.IA',
+    image: '/card-conformia-site.jpg',
+    desc: 'Plataforma de compliance e gestão de riscos: site institucional e dashboard de LGPD, ISOs, treinamentos e canal de denúncias.',
+    url: 'https://conformia-tau.vercel.app',
+  },
+  {
+    tag: 'API',
+    title: 'Conform.IA — Backend',
+    image: '/card-conformia.jpg',
+    desc: 'API em Python com FastAPI, SQLAlchemy e PostgreSQL, documentada em Swagger, testada com Pytest e containerizada com Docker.',
+    url: 'https://www.conformia.com.br',
+  },
+  {
+    tag: 'Full Stack',
+    title: 'Conjura',
+    image: '/card-conjura.jpg',
+    desc: 'Ecossistema jurídico-educacional sobre cidadania digital e ECA Digital. Next.js e React no front; FastAPI, PostgreSQL e Redis no back.',
+    url: 'https://www.conjura.com.br',
+  },
+  {
+    tag: 'Web',
+    title: 'Clara Machado Advocacia',
+    image: '/card-clara.svg',
+    desc: 'Site institucional do escritório de advocacia, em React, TypeScript e Tailwind sobre Vite.',
+    url: 'https://www.claramachadoadvocacia.com.br',
+  },
+]
+export const testimonials = []
