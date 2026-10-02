@@ -10,6 +10,7 @@ import Contact from './components/Contact'
 import Footer from './components/Footer'
 import useScrollReveal from './hooks/useScrollReveal'
 import { features } from './data/content'
+import  Analytics  from "@vercel/analytics/next"
 
 export default function App() {
   useScrollReveal()
@@ -43,6 +44,7 @@ export default function App() {
       <div className="container">
         <Footer />
       </div>
+      <Analytics/>
     </div>
   )
 }
