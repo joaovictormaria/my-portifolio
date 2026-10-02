@@ -179,6 +179,20 @@ export const projects = [
     url: 'https://velnox.app.br/',
   },
   {
+    tag: 'Portifólio',
+    title: 'VideoMaker Mariana',
+    image: '/card-mariana.png',
+    desc: 'Especializada na produção de vídeos para redes sociais, com foco em conteúdos práticos, dinâmicos e alinhados à identidade da sua marca.',
+    url: 'https://portifoliomariana.velnoxia.com.br',
+  },
+  {
+    tag: 'Portifólio',
+    title: 'Editor Gabriel',
+    image: '/card-gabriel.png',
+    desc: 'Eu edito vídeos que prendem a atenção, geram confiança e fazem sua audiência crescer.',
+    url: 'https://portifoliogabriel.velnoxia.com.br',
+  },
+  {
     tag: 'Web',
     title: 'VELNOX White Label',
     image: '/card-white-label.jpg',
